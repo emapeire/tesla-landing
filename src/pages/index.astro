@@ -11,14 +11,14 @@ import SignInIcon from "../components/SignInIcon.astro";
     <header
       class="py-2 px-10 flex items-center align-middle fixed top-0 w-full justify-between"
     >
-      <div>
+      <div class="flex flex-grow basis-0">
         <a href="#">
           <TeslaLogo />
         </a>
       </div>
       <nav>
         <ul
-          class="flex text-sm [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-4 [&>li>a]:py-2"
+          class="flex text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-4 [&>li>a]:py-2"
         >
           <li><a href="#">Vehicles</a></li>
           <li><a href="#">Energy</a></li>
@@ -27,7 +27,7 @@ import SignInIcon from "../components/SignInIcon.astro";
           <li><a href="#">Shop</a></li>
         </ul>
       </nav>
-      <nav class="lg:hidden">
+      <nav class="hidden lg:flex flex-grow basis-0 justify-end">
         <ul
           class="flex [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-2 [&>li>a]:py-2"
         >
@@ -48,9 +48,9 @@ import SignInIcon from "../components/SignInIcon.astro";
           </li>
         </ul>
       </nav>
-      <nav class="hidden lg:block">
+      <nav class="lg:hidden flex flex-grow basis-0 justify-end">
         <ul
-          class="flex text-sm [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-2 [&>li>a]:py-2"
+          class="flex text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-2 [&>li>a]:py-2"
         >
           <li>
             <a href="#">Menu</a>
