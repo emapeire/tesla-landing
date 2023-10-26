@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TeslaLogo from "../components/TeslaLogo.astro";
+import SupportIcon from "../components/SupportIcon.astro";
+import RegionIcon from "../components/RegionIcon.astro";
+import SignInIcon from "../components/SignInIcon.astro";
+---
+
+<Layout title="Welcome to Tesla">
+  <main>
+    <header
+      class="py-2 px-10 flex items-center align-middle fixed top-0 w-full justify-between"
+    >
+      <div>
+        <a href="#">
+          <TeslaLogo />
+        </a>
+      </div>
+      <nav>
+        <ul
+          class="flex text-sm [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-4 [&>li>a]:py-2"
+        >
+          <li><a href="#">Vehicles</a></li>
+          <li><a href="#">Energy</a></li>
+          <li><a href="#">Charging</a></li>
+          <li><a href="#">Discover</a></li>
+          <li><a href="#">Shop</a></li>
+        </ul>
+      </nav>
+      <nav class="lg:hidden">
+        <ul
+          class="flex [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-2 [&>li>a]:py-2"
+        >
+          <li>
+            <a href="#">
+              <SupportIcon />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <RegionIcon />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <SignInIcon />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="hidden lg:block">
+        <ul
+          class="flex text-sm [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-2 [&>li>a]:py-2"
+        >
+          <li>
+            <a href="#">Menu</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </main>
+</Layout>
