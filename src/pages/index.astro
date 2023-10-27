@@ -1,101 +1,12 @@
 ---
+import LandingHeader from "../components/LandingHeader.astro";
+import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
-import TeslaLogo from "../components/TeslaLogo.astro";
-import SupportIcon from "../components/SupportIcon.astro";
-import RegionIcon from "../components/RegionIcon.astro";
-import SignInIcon from "../components/SignInIcon.astro";
 ---
 
 <Layout title="Welcome to Tesla">
   <main>
-    <header
-      class="py-[10px] px-[50px] flex items-center align-middle fixed top-0 w-full justify-between text-white z-40"
-    >
-      <div class="flex flex-grow basis-0">
-        <a href="#">
-          <TeslaLogo />
-        </a>
-      </div>
-      <nav>
-        <ul
-          class="flex text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-4 [&>li>a]:py-2"
-        >
-          <li><a href="#">Vehicles</a></li>
-          <li><a href="#">Energy</a></li>
-          <li><a href="#">Charging</a></li>
-          <li><a href="#">Discover</a></li>
-          <li><a href="#">Shop</a></li>
-        </ul>
-      </nav>
-      <nav class="hidden lg:flex flex-grow basis-0 justify-end">
-        <ul
-          class="flex [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-2 [&>li>a]:py-2"
-        >
-          <li>
-            <a href="#">
-              <SupportIcon />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <RegionIcon />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <SignInIcon />
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <nav class="lg:hidden flex flex-grow basis-0 justify-end">
-        <ul
-          class="flex text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:align-middle [&>li>a]:px-2 [&>li>a]:py-2"
-        >
-          <li>
-            <a href="#">Menu</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section
-      class="bg-black text-white h-screen w-screen text-center relative overflow-hidden"
-    >
-      <div class="flex flex-col h-full z-30 relative">
-        <header class="flex flex-col">
-          <h2 class="pt-[80px] text-[40px] font-medium">Model Y</h2>
-          <p class="text-[20px] font-light">Lease starting at $399/mo*</p>
-        </header>
-        <footer class="flex flex-col flex-grow flex-nowrap justify-end pb-4">
-          <div class="flex flex-row justify-center pb-8 text-sm gap-6">
-            <a
-              href="#"
-              class="rounded-[4px] px-[90px] py-[10px] bg-black bg-opacity-60"
-            >
-              Order Now
-            </a>
-            <a
-              href="#"
-              class="rounded-[4px] px-[90px] py-[10px] text-black bg-white bg-opacity-60"
-            >
-              Demo Drive
-            </a>
-          </div>
-          <p class="text-[12px]">
-            *Excludes taxes and fees with price subject to change. Available in
-            select states. <a href="#" class="underline">See Details</a>
-          </p>
-        </footer>
-      </div>
-      <div class="absolute top-0 bottom-0 z-10 w-full h-full">
-        <video
-          class="w-full h-full object-cover"
-          autoplay
-          muted
-          loop
-          src="https://digitalassets.tesla.com/tesla-contents/video/upload/Homepage-Model-Y-Desktop-NA.mp4"
-        ></video>
-      </div>
-    </section>
+    <LandingHeader />
+    <HeroSection />
   </main>
 </Layout>
