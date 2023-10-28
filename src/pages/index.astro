@@ -1,164 +1,148 @@
 ---
-import LandingHeader from "../components/Header/LandingHeader.astro";
-import HeroSection from "../components/Hero/HeroSection.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import HeroModelY from "../components/Hero/HeroModelY.astro";
 import Layout from "../layouts/Layout.astro";
 import Video from "../components/Content/Video.astro";
 import Image from "../components/Content/Image.astro";
-import BlackButton from "../components/Button/BlackButton.astro";
-import WhiteButton from "../components/Button/WhiteButton.astro";
-import BorderButton from "../components/Button/BorderButton.astro";
-import WhiteHeader from "../components/Header/WhiteHeader.astro";
-import WhiteHeader2 from "../components/Header/WhiteHeader2.astro";
-import WhiteFooter from "../components/Footer/WhiteFooter.astro";
-import WhiteFooter2 from "../components/Footer/WhiteFooter2.astro";
-import BlackHeader from "../components/Header/BlackHeader.astro";
-import BlackFooter from "../components/Footer/BlackFooter.astro";
+import HeroModel3 from "../components/Hero/HeroModel3.astro";
+import HeroModelX from "../components/Hero/HeroModelX.astro";
+import HeroModelS from "../components/Hero/HeroModelS.astro";
+import HeroExperience from "../components/Hero/HeroExperience.astro";
+import HeroSolarPanels from "../components/Hero/HeroSolarPanels.astro";
+import HeroSolarRoof from "../components/Hero/HeroSolarRoof.astro";
+import HeroPowerwall from "../components/Hero/HeroPowerwall.astro";
+import HeroAccessories from "../components/Hero/HeroAccessories.astro";
 ---
 
 <Layout title="Welcome to Tesla">
   <LandingHeader />
   <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
     <div class="snap-center">
-      <HeroSection>
-        <WhiteHeader
-          slot="header"
-          title="Model Y"
-          subtitle="Lease starting at $399/mo*"
-        />
-        <BlackButton slot="button-1" text="Order Now" />
-        <WhiteButton slot="button-2" text="Demo Drive" />
-        <WhiteFooter
-          slot="footer"
-          text="*Excludes taxes and fees with price subject to change. Available in select states."
-          link="See Details."
-        />
+      <HeroModelY
+        headerTitle="Model Y"
+        headerSubtitle="Lease starting at $399/mo*"
+        buttonBlackText="Order Now"
+        buttonWhiteText="Demo Drive"
+        footerText="*Excludes taxes and fees with price subject to change. Available in select states."
+        footerLink="See Details."
+      >
         <Video
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/video/upload/Homepage-Model-Y-Desktop-NA.mp4"
         />
-      </HeroSection>
+      </HeroModelY>
     </div>
     <div class="snap-center">
-      <HeroSection>
-        <WhiteHeader
-          slot="header"
-          title="Model 3"
-          subtitle="Lease starting at $329/mo*"
-        />
-        <BlackButton slot="button-2" text="Demo Drive" />
-        <WhiteButton slot="button-1" text="Order Now" />
-        <WhiteFooter
-          slot="footer"
-          text="*Excludes taxes and fees with price subject to change. Available in select states."
-          link="See Details."
-        />
+      <HeroModel3
+        headerTitle="Model 3"
+        headerSubtitle="Lease starting at $329/mo*"
+        buttonWhiteText="Order Now"
+        buttonBlackText="Demo Drive"
+        footerText="*Excludes taxes and fees with price subject to change. Available in select states."
+        footerLink="See Details."
+      >
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-3-Desktop-NA.jpg"
           alt="Model 3"
         />
-      </HeroSection>
+      </HeroModel3>
     </div>
     <div class="snap-center">
-      <HeroSection>
-        <BlackHeader
-          slot="header"
-          title="Model X"
-          subtitle="From $68,590*"
-          description="After Federal Tax Credit & Est. Gas Savings"
-        />
-        <BlackButton slot="button-2" text="Demo Drive" />
-        <WhiteButton slot="button-1" text="Order Now" />
-        <WhiteFooter2
-          slot="footer"
-          text="*Price before incentives and savings is $79,990, excluding taxes and fees. Subject to change."
-          link="Learn about est. gas savings."
-        />
+      <HeroModelX
+        headerTitle="Model X"
+        headerSubtitle="From $68,590*"
+        headerDescription="After Federal Tax Credit & Est. Gas Savings"
+        buttonWhiteText="Order Now"
+        buttonBlackText="Demo Drive"
+        footerText="*Price before incentives and savings is $79,990, excluding taxes and fees. Subject to change."
+        footerLink="Learn about est. gas savings."
+      >
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-X-Desktop-LHD"
           alt="Model X"
         />
-      </HeroSection>
+      </HeroModelX>
     </div>
     <div class="snap-center">
-      <HeroSection>
-        <BlackHeader
-          slot="header"
-          title="Model S"
-          subtitle="From $71,090*"
-          description="After Est. Gas Savings"
-        />
-        <BlackButton slot="button-2" text="Demo Drive" />
-        <WhiteButton slot="button-1" text="Order Now" />
-        <BlackFooter
-          slot="footer"
-          text="*Price before savings is $74,990, excluding taxes and fees. Subject to change."
-          link="Learn about est. gas savings."
-        />
+      <HeroModelS
+        headerTitle="Model S"
+        headerSubtitle="From $71,090*"
+        headerDescription="After Est. Gas Savings"
+        buttonWhiteText="Order Now"
+        buttonBlackText="Demo Drive"
+        footerText="*Price before savings is $74,990, excluding taxes and fees. Subject to change."
+        footerLink="Learn about est. gas savings."
+      >
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-S-Desktop-LHD-6.22.jpg"
           alt="Model S"
         />
-      </HeroSection>
+      </HeroModelS>
     </div>
     <div class="snap-center">
-      <HeroSection>
-        <WhiteHeader2
-          slot="header"
-          title="Experience Tesla"
-          description="Schedule a Demo Drive Today"
-        />
-        <BorderButton slot="button-1" text="Demo Drive" />
+      <HeroExperience
+        headerTitle="Experience Tesla"
+        headerDescription="Schedule a Demo Drive Today"
+        buttonBorderText="Demo Drive"
+      >
         <Video
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto/Homepage-Demo-Drive-Desktop-NA.mp4"
         />
-      </HeroSection>
+      </HeroExperience>
     </div>
     <div class="snap-center">
-      <HeroSection>
-        <BlackButton slot="button-2" text="Demo Drive" />
-        <WhiteButton slot="button-1" text="Order Now" />
+      <HeroSolarPanels
+        headerTitle="Solar Panels"
+        headerLink="Schedule a Virtual Consultation"
+        buttonWhiteText="Order Now"
+        buttonBlackText="Learn More"
+      >
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/425_HP_SolarPanels_D"
           alt="Solar Panels"
         />
-      </HeroSection>
+      </HeroSolarPanels>
     </div>
     <div class="snap-center">
-      <HeroSection>
-        <BlackButton slot="button-2" text="Demo Drive" />
-        <WhiteButton slot="button-1" text="Order Now" />
+      <HeroSolarRoof
+        headerTitle="Solar Roof"
+        headerDescription="Produce Clean Energy From Your Roof"
+        buttonWhiteText="Order Now"
+        buttonBlackText="Learn More"
+      >
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-SolarRoof-Desktop-Global"
           alt="Solar Roof"
         />
-      </HeroSection>
+      </HeroSolarRoof>
     </div>
     <div class="snap-center">
-      <HeroSection>
-        <BlackButton slot="button-2" text="Demo Drive" />
-        <WhiteButton slot="button-1" text="Order Now" />
+      <HeroPowerwall
+        headerTitle="Powerwall"
+        buttonWhiteText="Order Now"
+        buttonBlackText="Learn More"
+      >
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Powerwall-Desktop.jpg"
           alt="Powerwall"
         />
-      </HeroSection>
+      </HeroPowerwall>
     </div>
     <div class="snap-center">
-      <HeroSection>
-        <WhiteButton slot="button-1" text="Shop Now" />
+      <HeroAccessories headerTitle="Accessories" buttonWhiteText="Shop Now">
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Accessories-Desktop-NA-APAC.jpg"
           alt="Accessories"
         />
-      </HeroSection>
+      </HeroAccessories>
     </div>
   </main>
 </Layout>

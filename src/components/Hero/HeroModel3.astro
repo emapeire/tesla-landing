@@ -1,0 +1,50 @@
+---
+const {
+  headerTitle,
+  headerSubtitle,
+  buttonBlackText,
+  buttonWhiteText,
+  footerText,
+  footerLink,
+} = Astro.props;
+---
+
+<section class="h-screen w-screen text-center relative overflow-hidden">
+  <div class="flex flex-col h-full z-30 relative">
+    <header class="flex flex-col text-white cursor-default">
+      <h2 class="pt-[80px] text-[40px] font-medium">
+        {headerTitle}
+      </h2>
+      <p class="text-[20px] font-light">
+        {headerSubtitle}
+      </p>
+    </header>
+    <footer class="flex flex-col flex-grow flex-nowrap justify-end pb-4">
+      <div class="flex flex-row justify-center pb-8 gap-[24px]">
+        <a
+          href="#"
+          class="rounded-[4px] px-[90px] py-[10px] text-black bg-white text-sm font-medium justify-center items-center align-middle bg-opacity-60 backdrop-blur-[15px]"
+        >
+          {buttonWhiteText}
+        </a>
+        <a
+          href="#"
+          class="rounded-[4px] px-[90px] py-[10px] text-sm font-medium justify-center items-center align-middle bg-black bg-opacity-60 backdrop-blur-[15px] text-white"
+        >
+          {buttonBlackText}
+        </a>
+      </div>
+      <div
+        class="flex flex-row justify-center items-center align-middle gap-1 text-[12px] font-light text-white"
+      >
+        <p class="cursor-default">
+          {footerText}
+        </p>
+        <a href="#" class="underline">{footerLink}</a>
+      </div>
+    </footer>
+  </div>
+  <div class="absolute top-0 bottom-0 z-10 w-full h-full">
+    <slot name="background" />
+  </div>
+</section>

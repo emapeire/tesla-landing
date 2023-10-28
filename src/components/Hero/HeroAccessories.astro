@@ -1,0 +1,38 @@
+---
+const { headerTitle, buttonWhiteText } = Astro.props;
+const getYear = () => new Date().getFullYear();
+---
+
+<section class="h-screen w-screen text-center relative overflow-hidden">
+  <div class="flex flex-col h-full z-30 relative">
+    <header class="flex flex-col text-black cursor-default">
+      <h2 class="pt-[80px] text-[40px] font-medium">
+        {headerTitle}
+      </h2>
+    </header>
+    <footer class="flex flex-col flex-grow flex-nowrap justify-end pb-4">
+      <div class="flex flex-row justify-center pb-16">
+        <a
+          href="#"
+          class="rounded-[4px] px-[90px] py-[10px] text-black bg-white text-sm font-medium justify-center items-center align-middle bg-opacity-60 backdrop-blur-[15px]"
+        >
+          {buttonWhiteText}
+        </a>
+      </div>
+      <div
+        class="flex flex-row justify-center items-center align-middle gap-4 text-[12px] font-light text-white"
+      >
+        <a href="#">Tesla © {getYear()}</a>
+        <a href="#">Privacy & Legal</a>
+        <a href="#">Vehicle Recalls</a>
+        <a href="#">Contact</a>
+        <a href="#">News</a>
+        <a href="#">Get Updates</a>
+        <a href="#">Locations</a>
+      </div>
+    </footer>
+  </div>
+  <div class="absolute top-0 bottom-0 z-10 w-full h-full">
+    <slot name="background" />
+  </div>
+</section>
