@@ -6,7 +6,8 @@ import SignInIcon from "./Icon/SignInIcon.astro";
 ---
 
 <header
-  class="py-[10px] px-[50px] flex items-center align-middle fixed top-0 w-full justify-between text-white z-40"
+  id="landing-header"
+  class="py-[10px] px-[50px] flex items-center align-middle fixed top-0 w-full justify-between text-current transition-colors duration-500 z-40 opacity-0 ease-in-out"
 >
   <div class="flex flex-grow basis-0">
     <a href="#">
@@ -55,3 +56,75 @@ import SignInIcon from "./Icon/SignInIcon.astro";
     </ul>
   </nav>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const landingHeaderElement = document.querySelector("#landing-header");
+
+    const applyTransition = (element) => {
+      setTimeout(() => {
+        element.style.opacity = "100";
+      }, 250);
+    };
+
+    applyTransition(landingHeaderElement);
+  });
+</script>
+
+<script>
+  const landingHeaderElement = document.querySelector(
+    "#landing-header"
+  ) as HTMLElement;
+
+  const landingHeaderObserverOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.8,
+  };
+
+  const landingHeaderColorObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const { isIntersecting } = entry;
+
+      if (isIntersecting) {
+        const color = entry.target.getAttribute("data-landing-header-color");
+        landingHeaderElement.style.color = color;
+      }
+    });
+  }, landingHeaderObserverOptions);
+
+  const landingHeaderSectionElements = document.querySelectorAll(
+    ".landing-header-section"
+  );
+  landingHeaderSectionElements.forEach((section) => {
+    landingHeaderColorObserver.observe(section);
+  });
+</script>
+
+<script>
+  const heroContentElements = document.querySelectorAll(".hero-content");
+
+  const heroObserverOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.8,
+  };
+
+  const heroTransitionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const { isIntersecting } = entry;
+
+      if (isIntersecting) {
+        entry.target.classList.remove("opacity-0");
+        entry.target.classList.add("opacity-100");
+      } else {
+        entry.target.classList.remove("opacity-100");
+        entry.target.classList.add("opacity-0");
+      }
+    });
+  }, heroObserverOptions);
+
+  heroContentElements.forEach((element) => {
+    heroTransitionObserver.observe(element);
+  });
+</script>
