@@ -1,26 +1,37 @@
 ---
-import LandingHeader from "../components/LandingHeader.astro";
-import HeroSection from "../components/HeroSection.astro";
+import LandingHeader from "../components/Header/LandingHeader.astro";
+import HeroSection from "../components/Hero/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
-import Video from "../components/Video.astro";
-import Image from "../components/Image.astro";
-import BlackButton from "../components/BlackButton.astro";
-import WhiteButton from "../components/WhiteButton.astro";
-import BorderButton from "../components/BorderButton.astro";
+import Video from "../components/Content/Video.astro";
+import Image from "../components/Content/Image.astro";
+import BlackButton from "../components/Button/BlackButton.astro";
+import WhiteButton from "../components/Button/WhiteButton.astro";
+import BorderButton from "../components/Button/BorderButton.astro";
+import WhiteHeader from "../components/Header/WhiteHeader.astro";
+import WhiteHeader2 from "../components/Header/WhiteHeader2.astro";
+import WhiteFooter from "../components/Footer/WhiteFooter.astro";
+import WhiteFooter2 from "../components/Footer/WhiteFooter2.astro";
+import BlackHeader from "../components/Header/BlackHeader.astro";
+import BlackFooter from "../components/Footer/BlackFooter.astro";
 ---
 
 <Layout title="Welcome to Tesla">
   <LandingHeader />
   <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
     <div class="snap-center">
-      <HeroSection
-        title="Model Y"
-        description="Lease starting at $399/mo*"
-        footerText="*Excludes taxes and fees with price subject to change. Available in select states."
-        footerLink="See Details"
-      >
+      <HeroSection>
+        <WhiteHeader
+          slot="header"
+          title="Model Y"
+          subtitle="Lease starting at $399/mo*"
+        />
         <BlackButton slot="button-1" text="Order Now" />
         <WhiteButton slot="button-2" text="Demo Drive" />
+        <WhiteFooter
+          slot="footer"
+          text="*Excludes taxes and fees with price subject to change. Available in select states."
+          link="See Details."
+        />
         <Video
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/video/upload/Homepage-Model-Y-Desktop-NA.mp4"
@@ -28,14 +39,19 @@ import BorderButton from "../components/BorderButton.astro";
       </HeroSection>
     </div>
     <div class="snap-center">
-      <HeroSection
-        title="Model 3"
-        description="Lease starting at $329/mo*"
-        footerText="*Excludes taxes and fees with price subject to change. Available in select states."
-        footerLink="See Details"
-      >
+      <HeroSection>
+        <WhiteHeader
+          slot="header"
+          title="Model 3"
+          subtitle="Lease starting at $329/mo*"
+        />
         <BlackButton slot="button-2" text="Demo Drive" />
         <WhiteButton slot="button-1" text="Order Now" />
+        <WhiteFooter
+          slot="footer"
+          text="*Excludes taxes and fees with price subject to change. Available in select states."
+          link="See Details."
+        />
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-3-Desktop-NA.jpg"
@@ -44,14 +60,20 @@ import BorderButton from "../components/BorderButton.astro";
       </HeroSection>
     </div>
     <div class="snap-center">
-      <HeroSection
-        title="Model X"
-        description="From $68,590*"
-        footerText="*Excludes taxes and fees with price subject to change. Available in select states."
-        footerLink="See Details"
-      >
+      <HeroSection>
+        <BlackHeader
+          slot="header"
+          title="Model X"
+          subtitle="From $68,590*"
+          description="After Federal Tax Credit & Est. Gas Savings"
+        />
         <BlackButton slot="button-2" text="Demo Drive" />
         <WhiteButton slot="button-1" text="Order Now" />
+        <WhiteFooter2
+          slot="footer"
+          text="*Price before incentives and savings is $79,990, excluding taxes and fees. Subject to change."
+          link="Learn about est. gas savings."
+        />
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-X-Desktop-LHD"
@@ -61,8 +83,19 @@ import BorderButton from "../components/BorderButton.astro";
     </div>
     <div class="snap-center">
       <HeroSection>
+        <BlackHeader
+          slot="header"
+          title="Model S"
+          subtitle="From $71,090*"
+          description="After Est. Gas Savings"
+        />
         <BlackButton slot="button-2" text="Demo Drive" />
         <WhiteButton slot="button-1" text="Order Now" />
+        <BlackFooter
+          slot="footer"
+          text="*Price before savings is $74,990, excluding taxes and fees. Subject to change."
+          link="Learn about est. gas savings."
+        />
         <Image
           slot="background"
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-S-Desktop-LHD-6.22.jpg"
@@ -72,6 +105,11 @@ import BorderButton from "../components/BorderButton.astro";
     </div>
     <div class="snap-center">
       <HeroSection>
+        <WhiteHeader2
+          slot="header"
+          title="Experience Tesla"
+          description="Schedule a Demo Drive Today"
+        />
         <BorderButton slot="button-1" text="Demo Drive" />
         <Video
           slot="background"
