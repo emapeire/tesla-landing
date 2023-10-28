@@ -1,8 +1,3 @@
----
-import BlackButton from "../components/BlackButton.astro";
-import WhiteButton from "../components/WhiteButton.astro";
----
-
 <section
   class="bg-black text-white h-screen w-screen text-center relative overflow-hidden"
 >
@@ -14,23 +9,17 @@ import WhiteButton from "../components/WhiteButton.astro";
       </p>
     </header>
     <footer class="flex flex-col flex-grow flex-nowrap justify-end pb-4">
-      <div class="flex flex-row justify-center pb-8 text-sm gap-[24px]">
-        <BlackButton text="Order Now" />
-        <WhiteButton text="Demo Drive" />
+      <div class="flex flex-row justify-center pb-8 gap-[24px]">
+        <slot name="button-1" />
+        <slot name="button-2" />
       </div>
-      <p class="text-[12px] cursor-default">
+      <p class="text-[12px] cursor-default font-light">
         *Excludes taxes and fees with price subject to change. Available in
         select states. <a href="#" class="underline">See Details</a>
       </p>
     </footer>
   </div>
   <div class="absolute top-0 bottom-0 z-10 w-full h-full">
-    <video
-      class="w-full h-full object-cover"
-      autoplay
-      muted
-      loop
-      src="https://digitalassets.tesla.com/tesla-contents/video/upload/Homepage-Model-Y-Desktop-NA.mp4"
-    ></video>
+    <slot name="background" />
   </div>
 </section>

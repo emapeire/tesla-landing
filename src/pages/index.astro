@@ -2,11 +2,110 @@
 import LandingHeader from "../components/LandingHeader.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
+import Video from "../components/Video.astro";
+import Image from "../components/Image.astro";
+import BlackButton from "../components/BlackButton.astro";
+import WhiteButton from "../components/WhiteButton.astro";
+import BorderButton from "../components/BorderButton.astro";
 ---
 
 <Layout title="Welcome to Tesla">
-  <main>
-    <LandingHeader />
-    <HeroSection />
+  <LandingHeader />
+  <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
+    <div class="snap-center">
+      <HeroSection>
+        <BlackButton slot="button-1" text="Order Now" />
+        <WhiteButton slot="button-2" text="Demo Drive" />
+        <Video
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/video/upload/Homepage-Model-Y-Desktop-NA.mp4"
+        />
+      </HeroSection>
+    </div>
+    <div class="snap-center">
+      <HeroSection>
+        <BlackButton slot="button-2" text="Demo Drive" />
+        <WhiteButton slot="button-1" text="Order Now" />
+        <Image
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-3-Desktop-NA.jpg"
+          alt="Model 3"
+        />
+      </HeroSection>
+    </div>
+    <div class="snap-center">
+      <HeroSection>
+        <BlackButton slot="button-2" text="Demo Drive" />
+        <WhiteButton slot="button-1" text="Order Now" />
+        <Image
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-X-Desktop-LHD"
+          alt="Model X"
+        />
+      </HeroSection>
+    </div>
+    <div class="snap-center">
+      <HeroSection>
+        <BlackButton slot="button-2" text="Demo Drive" />
+        <WhiteButton slot="button-1" text="Order Now" />
+        <Image
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-S-Desktop-LHD-6.22.jpg"
+          alt="Model S"
+        />
+      </HeroSection>
+    </div>
+    <div class="snap-center">
+      <HeroSection>
+        <BorderButton slot="button-1" text="Demo Drive" />
+        <Video
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto/Homepage-Demo-Drive-Desktop-NA.mp4"
+        />
+      </HeroSection>
+    </div>
+    <div class="snap-center">
+      <HeroSection>
+        <BlackButton slot="button-2" text="Demo Drive" />
+        <WhiteButton slot="button-1" text="Order Now" />
+        <Image
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/425_HP_SolarPanels_D"
+          alt="Solar Panels"
+        />
+      </HeroSection>
+    </div>
+    <div class="snap-center">
+      <HeroSection>
+        <BlackButton slot="button-2" text="Demo Drive" />
+        <WhiteButton slot="button-1" text="Order Now" />
+        <Image
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-SolarRoof-Desktop-Global"
+          alt="Solar Roof"
+        />
+      </HeroSection>
+    </div>
+    <div class="snap-center">
+      <HeroSection>
+        <BlackButton slot="button-2" text="Demo Drive" />
+        <WhiteButton slot="button-1" text="Order Now" />
+        <Image
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Powerwall-Desktop.jpg"
+          alt="Powerwall"
+        />
+      </HeroSection>
+    </div>
+    <div class="snap-center">
+      <HeroSection>
+        <WhiteButton slot="button-1" text="Shop Now" />
+        <Image
+          slot="background"
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Accessories-Desktop-NA-APAC.jpg"
+          alt="Accessories"
+        />
+      </HeroSection>
+    </div>
   </main>
 </Layout>
