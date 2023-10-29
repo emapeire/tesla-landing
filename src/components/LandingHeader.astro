@@ -55,19 +55,50 @@ import SignInIcon from "./Icon/SignInIcon.astro";
       </li>
     </ul>
   </nav>
+  <div
+    id="menu-backdrop"
+    class="absolute bg-black/5 backdrop-blur-xl rounded-[4px] translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-250 ease-in-out opacity-0 -z-10"
+  >
+  </div>
 </header>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const landingHeaderElement = document.querySelector("#landing-header");
+    const landingHeaderElement = document.querySelector(
+      "#landing-header"
+    ) as HTMLElement;
 
-    const applyTransition = (element) => {
+    const applyTransition = (element: HTMLElement) => {
       setTimeout(() => {
-        element.style.opacity = "100";
+        element.style.opacity = "1";
       }, 250);
     };
 
     applyTransition(landingHeaderElement);
+  });
+</script>
+
+<script>
+  const listItems = document.querySelectorAll("#landing-header li");
+  const menuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement;
+
+  listItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const { left, top, width, height } = item.getBoundingClientRect();
+
+      menuBackdrop.style.setProperty("--left", `${left}px`);
+      menuBackdrop.style.setProperty("--top", `${top}px`);
+      menuBackdrop.style.setProperty("--width", `${width}px`);
+      menuBackdrop.style.setProperty("--height", `${height}px`);
+
+      menuBackdrop.style.opacity = "1";
+      menuBackdrop.style.visibility = "visible";
+    });
+
+    item.addEventListener("mouseleave", () => {
+      menuBackdrop.style.opacity = "0";
+      menuBackdrop.style.visibility = "hidden";
+    });
   });
 </script>
 
@@ -79,7 +110,7 @@ import SignInIcon from "./Icon/SignInIcon.astro";
   const landingHeaderObserverOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.8,
+    threshold: 0.9,
   };
 
   const landingHeaderColorObserver = new IntersectionObserver((entries) => {
@@ -107,7 +138,7 @@ import SignInIcon from "./Icon/SignInIcon.astro";
   const heroObserverOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.8,
+    threshold: 0.9,
   };
 
   const heroTransitionObserver = new IntersectionObserver((entries) => {
